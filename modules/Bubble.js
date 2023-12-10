@@ -8,7 +8,7 @@ class Bubble extends Algorithm
 
         for (let pass = 0; pass < n; pass++) // One pass per index of the array
         {
-            for (let item = 0; item < n - passt  - 1; item++) // Compare each selected index
+            for (let item = 0; item < n - pass - 1; item++) // Compare each selected index
             {
                 if (this.array[item] > this.array[item + 1])
                 {
