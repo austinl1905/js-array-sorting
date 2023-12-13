@@ -1,6 +1,6 @@
-import Algorithm from './Base.js';
+import Permutation from './Base.js';
 
-class Merge extends Algorithm
+class Merge extends Permutation
 {
 
     sort()
@@ -14,16 +14,16 @@ class Merge extends Algorithm
         let leftHalf = this.array.slice(0, middle);
         let rightHalf = this.array.slice(middle);
 
-        console.log(leftHalf);
-        console.log(rightHalf);
+        // console.log(leftHalf);
+        // console.log(rightHalf);
 
-        let leftSort = new Merge(leftHalf);
-        let rightSort = new Merge(rightHalf);
+        let leftSort = new Merge(leftHalf); // New instance of Merge class for left half
+        let rightSort = new Merge(rightHalf); // New instance of Merge class for right half
 
-        let sortedLeft = leftSort.sort();
-        let sortedRight = rightSort.sort();
+        let sortedLeft = leftSort.sort(); // Call sort on left half
+        let sortedRight = rightSort.sort(); // Call sort on right half
 
-        return this.merge(sortedLeft, sortedRight);
+        return this.merge(sortedLeft, sortedRight); // Merge two halves
     }
 
     merge(left, right)
@@ -62,7 +62,8 @@ class Merge extends Algorithm
             rightIndex++;
         }
 
-        return finalArray;
+        this.array = finalArray;
+        return this.array;
     }
 }
 

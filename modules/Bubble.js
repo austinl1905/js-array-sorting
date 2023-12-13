@@ -1,6 +1,6 @@
-import Algorithm from './Base.js';
+import Permutation from './Base.js';
 
-class Bubble extends Algorithm
+class Bubble extends Permutation
 {
     sort()
     {
